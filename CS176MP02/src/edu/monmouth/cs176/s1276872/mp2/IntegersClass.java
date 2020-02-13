@@ -12,7 +12,7 @@ public class IntegersClass {
 		int max = 0;
 		int min = 0;
 		String maxPos = "";
-		int minPos = 0;
+		String minPos = "";
 		Integer [] integerArray;
 		
 		public  IntegersClass() {
@@ -61,7 +61,7 @@ public class IntegersClass {
 				if (i == 0)
 					min = integerArray[i];
 				else {
-					if (integerArray[i] < max)
+					if (integerArray[i] < min)
 						min = integerArray[i];
 				}//else
 					
@@ -69,22 +69,42 @@ public class IntegersClass {
 			return min;
 		}// findMin method
 		public String findMaxPos() {
-			String MaxPos = "test";
+			String maxPos = "test";
 			int maxCounter = 0;
 			for (int i = 0; i <= counter; i++) {
 				if (maxCounter == 0) {
 					if (integerArray[i] == max) {
 						maxPos = String.valueOf(i);
 						maxCounter++;
-						System.out.println(maxPos);
+						//System.out.println(maxPos);
 					}//if maxCounter == 0, and inegerArray[i] = max
 				}//if maxCounter ==0
-				else {
+				else if (maxCounter > 0){
 					if(integerArray[i] == max)
-						maxPos = maxPos + ", and " + String.valueOf(i);		
-				}//else
+						maxPos = maxPos + ", and " + String.valueOf(i);
+						maxCounter++;
+				}//else if
 					
 			}//for 
-			return MaxPos;
-		}
+			return maxPos;
+		}// findMaxPos method
+		public String findMinPos() {
+			int minCounter = 0;
+			for (int i = 0; i <= counter; i++) {
+				if (minCounter == 0) {
+					if (integerArray[i] == min) {
+						minPos = String.valueOf(i);
+						minCounter++;
+						//System.out.println(maxPos);
+					}//if maxCounter == 0, and inegerArray[i] = max
+				}//if maxCounter ==0
+				else if (minCounter > 0){
+					if(integerArray[i] == min)
+						minPos = minPos + ", and " + String.valueOf(i);
+						minCounter++;
+				}//else if
+					
+			}//for 
+			return minPos;
+		}// findMinPos method
 	}//class

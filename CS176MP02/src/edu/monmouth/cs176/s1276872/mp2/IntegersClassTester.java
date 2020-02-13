@@ -21,7 +21,9 @@ public class IntegersClassTester {
 		min = integer.findMin();
 		System.out.println(min + " min");
 		maxPos = integer.findMaxPos();
-		System.out.println(maxPos + " maxPosition(s)");
+		System.out.println(maxPos + " is/are maxPosition(s)");
+		minPos = integer.findMinPos();
+		System.out.println(minPos + " is/are minPosition(s)");
 		
 		}//main
 
